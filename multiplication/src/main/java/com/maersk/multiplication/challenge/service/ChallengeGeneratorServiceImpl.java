@@ -5,6 +5,7 @@ import com.maersk.multiplication.challenge.service.ChallengeGeneratorService;
 import org.springframework.stereotype.Service;
 
 import java.util.Random;
+import java.util.random.RandomGenerator;
 
 @Service
 public class ChallengeGeneratorServiceImpl implements ChallengeGeneratorService {
@@ -12,13 +13,13 @@ public class ChallengeGeneratorServiceImpl implements ChallengeGeneratorService 
     private final static int MINIMUM_FACTOR = 11;
     private final static int MAXIMUM_FACTOR = 100;
 
-    private final Random random;
+    private final RandomGenerator random;
 
     ChallengeGeneratorServiceImpl() {
         this.random = new Random();
     }
 
-    protected ChallengeGeneratorServiceImpl(final Random random) {
+    protected ChallengeGeneratorServiceImpl(final RandomGenerator random) {
         this.random = random;
     }
 

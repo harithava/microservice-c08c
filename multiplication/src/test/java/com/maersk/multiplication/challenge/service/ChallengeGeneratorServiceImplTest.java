@@ -6,10 +6,12 @@ import com.maersk.multiplication.challenge.service.ChallengeGeneratorServiceImpl
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Random;
+import java.util.random.RandomGenerator;
 
 import static org.assertj.core.api.BDDAssertions.then;
 import static org.mockito.BDDMockito.given;
@@ -19,8 +21,8 @@ public class ChallengeGeneratorServiceImplTest {
 
     private ChallengeGeneratorService challengeGeneratorService;
 
-    @Spy
-    private Random random;
+    @Mock
+    private RandomGenerator random;
 
     @BeforeEach
     public void setUp() {

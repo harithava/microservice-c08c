@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: gateway
+  config:
+    import: "optional:consul:"
   cloud:
     loadbalancer:
       ribbon:
@@ -15,6 +17,13 @@ spring:
       discovery:
 #        Get only services that are passing the health check
         query-passing: true
+#      bootstrap properties
+#      config:
+##        enabled: false
+#        data-key: application.yml
+#        prefix: config
+#        format: yaml
+#        default-context: defaults
     gateway:
       routes:
         - id: multiplication
@@ -35,17 +44,22 @@ spring:
               - "GET"
               - "POST"
               - "OPTIONS"
+
 #      default-filters:
 #        - name: Retry
 #          args:
 #            retries: 3
 #            methods: GET, POST
 
-
+# Comes with centralised log back
+logging:
+  level:
+    org.springframework.amqp.rabbit.connection.CachingConnectionFactory: WARN
 
 #logging:
 #  level:
 #    org.springframework.cloud.gateway.handler.predicate: trace
+
 
 
 

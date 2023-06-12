@@ -30,6 +30,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-amqp'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.cloud:spring-cloud-starter-consul-discovery'
+	implementation 'org.springframework.cloud:spring-cloud-starter-consul-config'
 	// https://mvnrepository.com/artifact/javax.persistence/javax.persistence-api
 	implementation 'javax.persistence:javax.persistence-api:2.2'
 	compileOnly 'org.projectlombok:lombok'
